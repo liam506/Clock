@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript Clock</title>
+	<link rel="stylesheet" type="text/css" href="klock.css">
+</head>
+<body>
+	<div class ="Clock">
+		<div class="hours">
+			<div class="hr" id="hr">
+		<div class="minutes">
+			<div class="min" id="min">
+		<div class="sec">
+			<div class="secc" id="secc">
+
+	<script type="text/javascript">
+		const deg = 6;
+		const hr = document.querySelector('#hr');
+		const min = document.querySelector('#min');
+		const secc = document.querySelector('#secc');
+
+	setInterval(()=>{
+	let day = new Date();
+	let hh = day.getHours() * 30;
+	let mm = day.getMinutes() * deg;
+	let ss = day.getSeconds() * deg;
+
+	hr.style.transform = `rotate(${(hh)+(mm/12)}deg)`;
+	min.style.transform = `rotate(${mm}deg)`;
+	secc.style.transform = `rotate(${ss}deg)`;
+	})
+
+	
+</script>
+</body>
+</html>
